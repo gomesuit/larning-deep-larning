@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
-#tf.set_random_seed(0)
+tf.set_random_seed(0)
 
 w = tf.Variable(tf.zeros([2, 1]))
 b = tf.Variable(tf.zeros([1]))
