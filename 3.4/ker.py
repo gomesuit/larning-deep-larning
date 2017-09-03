@@ -12,6 +12,10 @@ model = Sequential([
     Activation('sigmoid')
 ])
 
+# model = Sequential()
+# model.add(Dense(input_dim=2, units=1))
+# model.add(Activation('sigmoid'))
+
 model.compile(loss='binary_crossentropy', optimizer=SGD(lr=0.1))
 
 # モデル学習
