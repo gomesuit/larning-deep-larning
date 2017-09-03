@@ -1,6 +1,8 @@
+# coding: UTF-8
 import numpy as np
 import tensorflow as tf
 
+# モデル設定
 tf.set_random_seed(0)
 
 w = tf.Variable(tf.zeros([2, 1]))
@@ -15,6 +17,7 @@ train_step = tf.train.GradientDescentOptimizer(0.1).minimize(cross_entropy)
 
 correct_prediction = tf.equal(tf.to_float(tf.greater(y, 0.5)), t)
 
+# モデル学習
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
 Y = np.array([[0], [1], [1], [1]])
 
@@ -28,6 +31,7 @@ for epoch in range(200):
         t: Y
     })
 
+# 学習結果の確認
 classified = correct_prediction.eval(session=sess, feed_dict={
     x: X,
     t: Y
